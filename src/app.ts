@@ -60,3 +60,21 @@ app.listen(porta,()=>{
     console.log("Rodando na porta " + porta)
 })
 
+// import {Cliente} from "./cliente"
+// import {ContaCorrente} from "./contaCorrente"
+
+// let Nati = new Cliente("Nati Lucas", "111.222.333-44");
+// let Lina = new Cliente("Lina", "222.333.444-55");
+
+// let contaNati = new ContaCorrente(123,1,Nati,100)
+// let contaLina = new ContaCorrente(321,1,Lina,50)
+
+// console.log(contaNati)
+// console.log(contaLina)
+
+// contaNati.transferir(contaLina,50)
+// console.log(contaNati)
+// console.log(contaLina)
+
+
+

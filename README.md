@@ -1,0 +1,2 @@
+# SoulBank
+Projeto em typescript

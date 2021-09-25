@@ -4,7 +4,7 @@ import { ContaCorrentes } from "../ContaCorrentes"
 import { Clientes } from "../Clientes"
 import {app} from "../app"
 
-app.get("/", async (req, res) => {
+exports.Operacao = async (req:, res) => {
 
     try {
         let clienteOrigemBD = await ClienteModel.findOne({ cpf: "456" });
@@ -48,7 +48,7 @@ app.get("/", async (req, res) => {
     catch (e) {
         res.send("erro")
     }
-});
+};
 
 app.get("/inserirCliente", (req, res) => {
 

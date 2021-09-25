@@ -1,8 +1,8 @@
-interface Userprops {
+interface IClientes {
   nomeCompleto: string,
   cpf: string,
 }
-export class Cliente implements Userprops {
+export class Clientes implements IClientes {
   nomeCompleto!: string
   cpf!: string
 

@@ -1,41 +1,41 @@
-import { Cliente } from './cliente'
+import { Clientes } from './Clientes'
 
-export class ContaCorrente {
+export class ContaCorrentes {
   numero!: number
   agencia!: number
-  private titular!: Cliente
+  private titular!: Clientes
   private saldo!: number
 
-  constructor(numero: number, agencia: number, titular: Cliente, saldo: number) {
+  constructor(numero: number, agencia: number, titular: Clientes, saldo: number) {
     this.numero = numero
     this.agencia = agencia
     this.titular = titular
     this.saldo = saldo
   }
   setTitular(novoValor:any){
-    if (novoValor instanceof Cliente){
+    if (novoValor instanceof Clientes){
       this.titular = novoValor
     }
   }
-  getTitular(){
+  getTitular():Clientes{
     return this.titular
   }
-  getSaldo(){
+  getSaldo():number{
     return this.saldo
   }
-  sacar(valor:number){
+  sacar(valor:number):number | undefined{
     if (this.possuiSaldo(valor)){
       this.saldo -= valor;
       return valor
     }    
   }
-  depositar(valor:number){
+  depositar(valor:number):undefined{
     if(valor <= 0){
       return
     }
     this.saldo += valor;
   }
-  transferir(contaDestino:ContaCorrente, valor:number){
+  transferir(contaDestino:ContaCorrentes, valor:number):void{
     if(this.possuiSaldo(valor)){
       this.sacar(valor)
       contaDestino.depositar(valor)

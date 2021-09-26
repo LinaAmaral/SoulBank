@@ -18,13 +18,13 @@
   <div class="row g-2">
     <div class="col-4">
       <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"><a href="/transacoes"> TELA INICIAL</a></button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SAQUES</button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">EXTRATO</button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">TRANSFERÊNCIA</button>
+      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block" disabled>SAQUES</button>
+      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block" disabled>EXTRATO</button>
+      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"><a href="/transferencia">TRANSFERÊNCIA</a></button>
     </div>
     <div class="col-8">
       <div class="alert alert-success" role="alert">
-        <h3>Seu saldo é de R$</h3>
+        <h3>Seu saldo é de R$ <%=saldoUsuario%></h3>
          <hr>
       </div>
     </div>

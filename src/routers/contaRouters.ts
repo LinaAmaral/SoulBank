@@ -1,33 +1,27 @@
-import express, { response } from "express";
-import { request } from "http";
-export const router = express.Router();
-
+import express from "express";
+import { usuario } from "../app";
 import { ClienteModel } from "../models/clienteBdModel"
 import { ContaCorrenteModel } from "../models/contaBdModel"
 import { ContaCorrentes } from "../ContaCorrentes"
 import { Clientes } from "../Clientes"
-import { app } from "../app"
 
-import * as controlador from "../controllers/contaController"
-import { resourceLimits } from "worker_threads";
-// const controller = controlador;
+const router = express.Router();
 
 router.get('/login', (request, response) => {
   response.render("login");
 });
 
-//falta fazer o login. login redireciona para transações
 router.post('/login', (request, response) => {
-
+  usuario.cpf = request.body.senha
+  response.redirect("/transacoes")
 })
 
-//levar o id do usuário para a rota de transferencia
 router.get('/transacoes', (request, response) => {
   response.render("transacoes");
 });
 
 router.get('/transferencia', (request, response) => {
-  response.render("transferencia");
+  response.render("transferencia", { usuario: usuario });
 });
 
 router.post('/transferencia', async (req: any, res: any) => {
@@ -77,15 +71,14 @@ router.post('/transferencia', async (req: any, res: any) => {
   }
 });
 
+router.get('/saldo', async (request, response) => {
+  try {
+    const contaUsuario = await ContaCorrenteModel.findOne({ cpfTitular: usuario.cpf })
+    response.render("saldo", { saldoUsuario: contaUsuario?.saldo });
 
-router.get('/saldo', (request, response) => {
-  response.render("saldo");
+  } catch (error) {
+    response.send("erro")
+  }
 });
 
-
 export { router as minhaRouter }
-
-
-
-
-

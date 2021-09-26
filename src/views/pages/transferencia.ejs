@@ -22,7 +22,7 @@
           onclick="adicionaNumero('100,00')">R$ 100,00</button>
         <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
           onclick="adicionaNumero('150,00')">R$ 150,00</button>
-        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SALDO</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"> <a href="/saldo">SALDO</a></button>
         <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"><a href="/transacoes">TELA
             INICIAL</a></button>
       </div>
@@ -36,9 +36,9 @@
             <input placeholder="Valor em R$" type="text" id="mount" name="mount" required>
           </fieldset>
 
-          <input type="hidden" value="123" name="cpfUsuario">
+          <input type="hidden" value="<%=usuario.cpf%>" name="cpfUsuario">
 
-          <a class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmacao">
+          <a class="btn btn-secondary" id="bt-transferir" data-toggle="modal" data-target="#modalConfirmacao" onclick="pegarValorTransferencia()">
             TRANSFERIR
           </a>
           <div class="modal fade" id="modalConfirmacao" tabindex="-1" role="dialog"
@@ -52,11 +52,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  Você está transferindo o valor de <span></span>$ 100 para João Nelson
+                  Você está transferindo o valor de R$ <span id="valorTransferencia"></span>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                  <button type="submit" href="saldo" class="btn btn-secondary">Confirmar</button>
+                  <button type="submit" href="/saldo" class="btn btn-secondary">Confirmar</button>
                 </div>
               </div>
             </div>
@@ -70,8 +70,8 @@
           onclick="adicionaNumero('300,00')">R$ 300,00</button>
         <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
           onclick="adicionaNumero('500,00')">R$ 500,00</button>
-        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SAQUES</button>
-        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">EXTRATO</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block" disabled>SAQUES</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block" disabled>EXTRATO</button>
       </div>
     </div>
   </div>
@@ -79,6 +79,11 @@
   <script>
     function adicionaNumero(money) {
       document.getElementById("mount").value = money;
+    }
+    function pegarValorTransferencia(){
+      $("#valorTransferencia").text(document.getElementById("mount").value)
+     
+
     }
   </script>
 

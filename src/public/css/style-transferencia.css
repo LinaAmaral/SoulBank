@@ -60,7 +60,7 @@ fieldset {
   padding: 10px;
 }
 
-#dadosTransferencia button[type="submit"] {
+#dadosTransferencia button[type="submit"],#bt-transferir {
   cursor: pointer;
   width: 100%;
   border: none;
@@ -71,7 +71,7 @@ fieldset {
   font-size: 15px;
 }
 
-#dadosTransferencia button[type="submit"]:hover {
+#dadosTransferencia button[type="submit"]:hover, #bt-transferir:hover {
   color: #1A2E40;
   background: #A8B9BF;
 }

@@ -19,19 +19,20 @@
       <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"><a href="/transacoes">TELA INICIAL</a></button>
     </div>
     <div class="col-6">
-      <form id="dadosTransferencia" action="" method="post">
+      <form id="dadosTransferencia" action="/transferencia" method="post">
         <h3>SELECIONE OU DIGITE O VALOR DESEJADO E TECLE TRANSFERIR</h3>
         <fieldset>
-          <input placeholder="Número da conta" type="text" required autofocus>
+          <input placeholder="Número da conta" type="text" name="conta" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder="Valor em R$" type="text" id="mount" required>
+          <input placeholder="Valor em R$" type="text" id="mount"  name="mount" required>
         </fieldset>
-        <fieldset>
-        </fieldset>
-        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmacao">
+
+        <input type="hidden" value="123" name="cpfUsuario">
+
+        <a class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmacao">
           TRANSFERIR
-        </button>
+        </a>
         <div class="modal fade" id="modalConfirmacao" tabindex="-1" role="dialog"
           aria-labelledby="TituloModalCentralizado" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -47,7 +48,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-secondary">Confirmar</button>
+                <button type="submit" href="saldo" class="btn btn-secondary">Confirmar</button>
               </div>
             </div>
           </div>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style-transferencia.css">
+  <title>SoulBank Transferência</title>
+</head>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <img src="../projetosoulbank/WhatsApp Image 2021-09-25 at 22.48.08.jpeg" class="rounded float-left" alt="...">
+    <h1 class="display">SoulBank transferência digital</h1>
+    <p class="lead">Por favor, digite os dados nos campos abaixo</p>
+  </div>
+</div>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script>
+    function adicionaNumero(money) {
+      document.getElementById("mount").value = money;
+    }
+  </script>
+
+  <div class="container">
+    <div class="row g-2">
+      <div class="col-3">
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('50,00')">R$
+          50,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('100,00')">R$ 100,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('150,00')">R$ 150,00</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SALDO</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">TELA INICIAL</button>
+      </div>
+      <div class="col-6">
+        <form id="dadosTransferencia" action="" method="post">
+          <h3>SELECIONE OU DIGITE O VALOR DESEJADO E TECLE TRANSFERIR</h3>
+          <fieldset>
+            <input placeholder="Número da conta" type="text" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Valor em R$" type="text" id="mount" required>
+          </fieldset>
+          <fieldset>
+          </fieldset>
+          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmacao">
+            TRANSFERIR
+          </button>
+          <div class="modal fade" id="modalConfirmacao" tabindex="-1" role="dialog"
+            aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="TituloModalCentralizado">CONFIRMAÇÃO DE TRANSFERÊNCIA</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Você está transferindo o valor de <span></span>$ 100 para João Nelson
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-secondary">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-3">
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('200,00')">R$ 200,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('300,00')">R$ 300,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('500,00')">R$ 500,00</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SAQUES</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">EXTRATO</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

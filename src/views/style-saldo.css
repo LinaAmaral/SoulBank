@@ -1,0 +1,49 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  background-color: #1A2E40;
+  color: #F9F9F9;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #F9F9F9;
+  background:#1A2E40;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+h3 {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.alert-success {
+  color:#F9F9F9;
+  background-color: #1A2E40;
+  border-color:#1A2E40;
+}
+
+.alert-success hr {
+  border-top-color:#F9F9F9;
+}
+
+p{
+  font-size: 16px;
+}

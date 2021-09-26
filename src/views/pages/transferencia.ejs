@@ -1,77 +1,85 @@
 <%- include('../partials/header'); %>
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <img src="/images/logo.jpeg" alt="Logo SoulBank" class="rounded float-left">
-    <h1 class="display">SoulBank transferência digital</h1>
-    <p class="lead">Por favor, digite os dados nos campos abaixo</p>
-  </div>
-</div>
-<div class="container">
-  <div class="row g-2">
-    <div class="col-3">
-      <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block" onclick="adicionaNumero('50,00')">R$
-        50,00</button>
-      <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
-        onclick="adicionaNumero('100,00')">R$ 100,00</button>
-      <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
-        onclick="adicionaNumero('150,00')">R$ 150,00</button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SALDO</button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"><a href="/transacoes">TELA INICIAL</a></button>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-1">
+          <img src="./images/logo.jpeg" alt="Logo SoulBank" class="rounded float-left">
+        </div>
+        <div class="col-9">
+          <h1 class="display">SoulBank transferência digital</h1>
+          <p class="lead">Por favor, digite os dados nos campos abaixo</p>
+        </div>
+      </div>
     </div>
-    <div class="col-6">
-      <form id="dadosTransferencia" action="/transferencia" method="post">
-        <h3>SELECIONE OU DIGITE O VALOR DESEJADO E TECLE TRANSFERIR</h3>
-        <fieldset>
-          <input placeholder="Número da conta" type="text" name="conta" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Valor em R$" type="text" id="mount"  name="mount" required>
-        </fieldset>
+  </div>
+  <div class="container">
+    <div class="row g-2">
+      <div class="col-3">
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('50,00')">R$
+          50,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('100,00')">R$ 100,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('150,00')">R$ 150,00</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SALDO</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block"><a href="/transacoes">TELA
+            INICIAL</a></button>
+      </div>
+      <div class="col-6">
+        <form id="dadosTransferencia" action="/transferencia" method="post">
+          <h3>SELECIONE OU DIGITE O VALOR DESEJADO E TECLE TRANSFERIR</h3>
+          <fieldset>
+            <input placeholder="Número da conta" type="text" name="conta" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Valor em R$" type="text" id="mount" name="mount" required>
+          </fieldset>
 
-        <input type="hidden" value="123" name="cpfUsuario">
+          <input type="hidden" value="123" name="cpfUsuario">
 
-        <a class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmacao">
-          TRANSFERIR
-        </a>
-        <div class="modal fade" id="modalConfirmacao" tabindex="-1" role="dialog"
-          aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">CONFIRMAÇÃO DE TRANSFERÊNCIA</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Você está transferindo o valor de <span></span>$ 100 para João Nelson
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                <button type="submit" href="saldo" class="btn btn-secondary">Confirmar</button>
+          <a class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmacao">
+            TRANSFERIR
+          </a>
+          <div class="modal fade" id="modalConfirmacao" tabindex="-1" role="dialog"
+            aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="TituloModalCentralizado">CONFIRMAÇÃO DE TRANSFERÊNCIA</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Você está transferindo o valor de <span></span>$ 100 para João Nelson
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" href="saldo" class="btn btn-secondary">Confirmar</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
-    <div class="col-3">
-      <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
-        onclick="adicionaNumero('200,00')">R$ 200,00</button>
-      <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
-        onclick="adicionaNumero('300,00')">R$ 300,00</button>
-      <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
-        onclick="adicionaNumero('500,00')">R$ 500,00</button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SAQUES</button>
-      <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">EXTRATO</button>
+        </form>
+      </div>
+      <div class="col-3">
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('200,00')">R$ 200,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('300,00')">R$ 300,00</button>
+        <button type="button" class="btn btn-light btn-lg btn-block btn-lg btn-block"
+          onclick="adicionaNumero('500,00')">R$ 500,00</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">SAQUES</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block btn-lg btn-block">EXTRATO</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  function adicionaNumero(money) {
-    document.getElementById("mount").value = money;
-  }
-</script>
+  <script>
+    function adicionaNumero(money) {
+      document.getElementById("mount").value = money;
+    }
+  </script>
 
-<%- include('../partials/footer'); %>
+  <%- include('../partials/footer'); %>

@@ -1,0 +1,50 @@
+/* style da tela de login */
+
+/* #1A2E40
+#BBD8F2
+#6D90A6
+#516973
+#A8B9BF */
+
+*{
+  margin: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #1A2E40;
+}
+
+.botao_entrar:hover{
+  background-color: #516973;
+}
+.titulo{
+  color: #516973;
+}
+
+.campoLogin{
+  width: 30vw,
+}
+
+/* style da tela de transações */
+
+h1,h2 {
+  color: white
+}
+
+.botao {
+  width: 100vw;
+  height: 10vh;
+  font-size: 2rem;
+  font-weight: bolder;
+  background-color: #516973;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: white;
+  text-decoration:none ;
+
+}

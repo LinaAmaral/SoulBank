@@ -1,16 +1,24 @@
 import express from "express";
 import mongoose from "mongoose";
+import { minhaRouter } from "./routers/contaRouters";
+import path from "path";
+ 
 // import { Clientes } from "./Clientes";
 // import { ContaCorrentes } from "./ContaCorrentes";
 
 export const app = express();
-const porta = 3000;
+const porta = 8000;
+const rota = minhaRouter;
+const caminhoViews = path.join(__dirname + '/../src/views/pages');
+const caminhoPublic = path.join(__dirname + '/../src/public');
 
 app.set("view engine", "ejs");
-app.set("views", `${__dirname}/views`);
+app.set("views", caminhoViews);
 app.use(express.urlencoded());
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(caminhoPublic));
+
+console.log(caminhoViews);
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://lina_amaral:lina_amaral@cluster0.jklru.mongodb.net/banco?retryWrites=true&w=majority").then(() => {
@@ -18,6 +26,9 @@ mongoose.connect("mongodb+srv://lina_amaral:lina_amaral@cluster0.jklru.mongodb.n
 }).catch((error) => {
     console.log("Erro ao conectar ao banco" + error)
 })
+
+app.use("/",rota)
+
 
 // interface ClientesBdModel {
 //     nomeCompleto: string,

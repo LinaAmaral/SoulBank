@@ -1,29 +1,31 @@
 <%- include('../partials/header'); %>
 
 
-<div class="row justify-content-center">
-  <img src="./images/logo.jpeg" alt="Logo SoulBank" class="logo img-fluid">
+  <div class="row justify-content-center">
+    <img src="./images/logo.jpeg" alt="Logo SoulBank" class="logo img-fluid">
 
-</div>
-
-
-<main class="container row m-auto">
-  <section class="col-6 m-auto " id="acesso">
-    <div class="row my-3 mx-auto tam_dados justify-content-center">
-      <h4 class="display-4 text-center titulo">Acesse sua conta!</h4>
-      <label for="cpf" readonly class="col-form-label sr-only">Conta</label>
-      <input type="text" class="form-control" id="conta" placeholder="CONTA">
-    </div>
-    <div class="row my-3 mx-auto tam_dados">
-      <label for="senha" class="col-form-label sr-only ">Senha</label>
-      <input type="password" class="form-control" id="senha" placeholder="SENHA">
-    </div>
-    <div class="row my-3 d-flex justify-content-center">
-      <button class="btn btn-light botao_entrar">Entrar</button>
-    </div>
-  </section>
-</main>
+  </div>
 
 
+  <main class="container row m-auto">
+    <section class="col-6 m-auto " id="acesso">
+      <form action="/login" method="POST">
+        <div class="row my-3 mx-auto tam_dados justify-content-center">
+          <h4 class="display-4 text-center titulo">Acesse sua conta!</h4>
+          <label for="cpf" readonly class="col-form-label sr-only">Conta</label>
+          <input type="text" class="form-control" id="conta" name="conta" placeholder="CONTA">
+        </div>
+        <div class="row my-3 mx-auto tam_dados">
+          <label for="senha" class="col-form-label sr-only ">Senha</label>
+          <input type="password" class="form-control" id="senha" name="senha" placeholder="SENHA">
+        </div>
+        <div class="row my-3 d-flex justify-content-center">
+          <button type="submit" class="btn btn-light botao_entrar">Entrar</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-<%- include('../partials/footer'); %>
+
+
+  <%- include('../partials/footer'); %>

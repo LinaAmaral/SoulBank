@@ -1,12 +1,20 @@
-import express from "express";
-import * as controlador from "../controllers/contaController"
-
-// const controller = controlador;
+import express, { response } from "express";
 export const router = express.Router();
 
-router.get('/', (request, response) => {
+import * as controlador from "../controllers/contaController"
+// const controller = controlador;
+
+router.get('/login', (request, response) => {
   response.render("login");
 });
+router.post('/login', (request,response)=>{
+  
+})
+
+
+
+//rota login pegar as informações do form e procurar no bd ->model invalido/renderiza para transações
+
 
 router.get('/transacoes', (request, response) => {
   response.render("transacoes");
